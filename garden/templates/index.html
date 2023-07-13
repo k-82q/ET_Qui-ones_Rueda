@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/modoOscuro.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <title>Inicio</title>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#opciones">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+          
+        <a href="#" class="navbar-brand">
+            <img src="{% static 'img/logo.png' %}" width="120px" height="140px">
+        </a>       
+        <div class="collapse navbar-collapse" id="opciones">
+            {% if user.is_authenticated %}
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}"> Inicio</a>
+                    
+                </li>   
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mision' %}"> Misión</a>
+                    
+                </li>
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'galeria' %}"> Galeria</a>
+                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'tienda' %}"> Tienda</a>
+                    
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'productos' %}"> Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Bienvenid@ {{ user.username }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}" id="userBookStop">
+                        Cerrar sesión
+                    </a>
+                </li>
+                
+            </ul>
+            {% else %}
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}"> Inicio</a>
+                    
+                </li>   
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mision' %}"> Misión</a>
+                    
+                </li>
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'galeria' %}"> Galeria</a>
+                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}"> Inicio de Sesion</a>
+                    
+                </li>
+               
+
+               
+            </ul>
+            {% endif %}
+
+
+            
+        </div>
+        <div " class="nav-item">
+            <p>Precio BTC/USD : </p>
+            <h2 id="precio-btc"></h2>
+
+        </div>
+        
+       
+        <div class="nav-item">
+            <li class="nav-item">
+                <script>
+                    var fechaHora = new Date();
+                    document.write(fechaHora);
+                </script>
+            </li>
+        </div>
+        <div>
+            <input type="checkbox" id="toggle">
+
+            <label class="toggle" for="toggle">
+                <i class="bx bxs-sun"></i>
+                <i class="bx bx-moon"></i>
+                <span class="ball"></span>
+            </label>
+        </div>
+    </nav>
+
+    <!--carrusel-->
+    <div class="container-fluid video ">
+        <div id="carousel1" class="carousel slides " data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel1" data-slide-to="1"></li>
+                <li data-target="#carousel1" data-slide-to="2"></li>
+            </ol>
+            <!--configuramos nuestras fotos-->
+            <div class="carousel-inner ">
+                <div class="carousel-item active">
+                    <img class="slide-img" src="{% static 'img/jardineria.webp' %}">
+                    <div class="carousel-caption">
+                        <h3 class="text">Decoracion interior</h3>
+                        <p class="text">Decora tus espacios de forma creativa!</p>
+                    </div>
+
+                </div>
+                
+                <div class="carousel-item">
+                    <img class="slide-img" src="{% static 'img/colgante.jpg' %}">
+                    <div class="carousel-caption">
+                        <h3 class="text">Maceteros Colgantes</h3>
+                        <p class="text">Perfecto para pequeños espacios</p>
+
+                    </div>
+
+                </div>
+                <div class="carousel-item">
+                    <img class="slide-img" src="{% static 'img/PH184305.webp' %}">
+                    <div class="carousel-caption">
+                        <h3 class="text">Equipamiento de Exterior</h3>
+                        <p class="text">Los mejores productos para decorar tus terrazas y quinchos</p>
+
+                    </div>
+
+                </div>
+
+            </div> <!--cierre carrusel inner-->
+            <a class="carousel-control-prev" href="#carousel1" data-slide="prev">
+                <span class="carousel-control-prev-icon" ></span>
+                <span class="sr-only">previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel1" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="sr-only">next</span>
+            </a>
+
+
+
+        </div>
+
+    </div>
+    <div class="container-fluid slides">
+        <div class="row">
+            <div class="col-md">
+                <div class="card">
+                    <img src="{% static 'img/PH177274.webp' %}" class="card-img-bottom">
+                    <div class="card-body">
+                        <h3 class="card-title">Muebles de almacenamiento para interior y exterior </h3>
+                        <p class="card-text">Aprovecha el espacio en tu terraza para guardar lo que necesites, o darle más espacio a tus plantas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Palabras del diseñador</h3>
+                        <p>"Tradicional, clásica y romántica. Así quería que fuera la colección de muebles de exterior. Me inspiré en el jardín, y sus líneas sencillas y nítidas me hacen recordar las ramas de un manzano. Seguramente reconocerás las formas tradicionales en el hierro forjado orgánico de las patas de las mesas y en el clásico respaldo con barrotes de la silla pequeña. Me imagino estos muebles en un jardín frondoso, donde pueden crear un espacio hermoso para hacer vida social en grupos grandes y pequeños".</p>
+                    </div>
+                    <img src="{% static 'img/soporte-para-plantas-satsumas-de-ikea_f5d7747a_1907x1279.png' %}" class="card-img-top ">
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="slides"> </div>
+
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{% static 'js/valor.js' %}"></script>
+    <script src="{% static 'js/metodos.js' %}"></script>
+    
+</body>
+<footer class="footer">
+    <div class="containerF">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Compañia</h4>
+                <ul>
+                    <li><a href="{% url 'mision' %}">Sobre nosotros</a></li>
+                    <li><a href="{% url 'galeria' %}">Nuestros servicios</a></li>
+                    <li><a href="#">Politica de privacidad</a></li>
+                    <li><a href="#">Programa de socios</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Ayuda</h4>
+                <ul>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Envios</a></li>
+                    <li><a href="{% url 'contactenos' %}">Contacto</a></li>
+                    <li><a href="#">Estado de la orden</a></li>
+                    <li><a href="#">Opciones de pago</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Tienda online</h4>
+                <ul>
+                    <li><a href="#">Maceteros</a></li>
+                    <li><a href="#">Semillas</a></li>
+                    <li><a href="#">Utencilios</a></li>
+                    <li><a href="#">Fertilizantes</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Siguenos</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

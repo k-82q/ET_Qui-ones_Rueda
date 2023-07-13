@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/modoOscuro.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" >
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" >
+    <title>Mision</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#opciones">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <!--insertar logo-->
+            
+        <a href="#" class="navbar-brand">
+            <img src="{% static 'img/logo.png' %}" width="120px" height="140px">
+        </a>       
+        <div class="collapse navbar-collapse" id="opciones">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}"> Inicio</a>
+                    
+                </li>   
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mision' %}"> Misión</a>
+                    
+                </li>
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'galeria' %}"> Galeria</a>
+                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'tienda' %}"> Tienda</a>
+                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}"> Inicio de Sesion</a>
+                    
+                </li>
+              
+               
+        
+    
+            </ul>
+
+            
+        </div>
+        <div " class="nav-item">
+            <p>Precio BTC/USD : </p>
+            <h2 id="precio-btc"></h2>
+
+        </div>
+        <div>
+            <input type="checkbox" id="toggle">
+
+            <label class="toggle" for="toggle">
+                <i class="bx bxs-sun"></i>
+                <i class="bx bx-moon"></i>
+                <span class="ball"></span>
+            </label>
+        </div>
+       
+        
+    </nav>
+    <br><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md">
+                <div class="card">
+                    <img src="{% static 'img/istockphoto-1153409243-612x612.jpg' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title">Quienes somos</h3>
+                        <p class="card-text">Somos una pyme nacida desde una comunidad de vecinos dedicados a la venta de productos de jardineria y demas, esta pyme se creo con el fin de ayudar a fundaciones sin fines de lucro en la replantacion del pais y la creacion de mas espacios verdes intraurbanos
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Mision</h3>
+                        <p>Nuestra misión en es crear y mantener espacios verdes bellos y saludables para nuestros clientes. Nos comprometemos a trabajar en estrecha colaboración con ellos para comprender sus necesidades y deseos, y ofrecer soluciones personalizadas que superen sus expectativas.
+
+                            Nos esforzamos por utilizar prácticas sostenibles y respetuosas con el medio ambiente en todas las facetas de nuestro trabajo, desde la selección cuidadosa de plantas y materiales hasta la implementación de técnicas de conservación del agua y la energía. Además, valoramos la educación y el desarrollo profesional de nuestro equipo, para garantizar que siempre estemos al día en las últimas tendencias y tecnologías de jardinería</p>
+                    </div>
+                    <img src="{% static 'img/istockphoto-1336689586-170667a.jpg' %}" class="card-img-bottom">
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card">
+                    <img src="{% static 'img/pexels-huy-phan-3076899.jpg' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title">Vision </h3>
+                        <p class="card-text">Nuestra Vision como empresa es le de poder ayudar a nuestros clientes a generar mas espacios verdes dentros de sus hogares de manera sencilla y comoda, ademas apoyamos a fundaciones sin fines de lucro las cuales ayudan a personas 
+                            que no tienen las facilidades o la instalacion necesaria para tener este tipo de areas en sus hogares, asi expandiendo nuestra vision a los hogares de todos.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/anlqCSMVjAo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{% static 'js/valor.js' %}"></script>
+    <script src="{% static 'js/metodos.js' %}"></script>
+    
+</body>
+<footer class="footer">
+    <div class="containerF">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Compañia</h4>
+                <ul>
+                    <li><a href="{% url 'mision' %}">Sobre nosotros</a></li>
+                    <li><a href="{% url 'galeria' %}">Nuestros servicios</a></li>
+                    <li><a href="#">Politica de privacidad</a></li>
+                    <li><a href="#">Programa de socios</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Ayuda</h4>
+                <ul>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Envios</a></li>
+                    <li><a href="{% url 'contactenos' %}">Contacto</a></li>
+                    <li><a href="#">Estado de la orden</a></li>
+                    <li><a href="#">Opciones de pago</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Tienda online</h4>
+                <ul>
+                    <li><a href="#">Maceteros</a></li>
+                    <li><a href="#">Semillas</a></li>
+                    <li><a href="#">Utencilios</a></li>
+                    <li><a href="#">Fertilizantes</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Siguenos</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>
